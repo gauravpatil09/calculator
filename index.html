@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calc</title>
+  <style>
+    body { text-align:center; font-family:sans-serif; }
+    input, button { font-size:1.5em; margin:5px; }
+  </style>
+</head>
+<body>
+  <h2>Calculator</h2>
+  <input id="display" disabled>
+  <br>
+  <div>
+    <button onclick="add('1')">1</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('3')">3</button>
+    <button onclick="add('+')">+</button><br>
+    <button onclick="add('4')">4</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('6')">6</button>
+    <button onclick="add('-')">-</button><br>
+    <button onclick="add('7')">7</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('9')">9</button>
+    <button onclick="add('*')">*</button><br>
+    <button onclick="add('0')">0</button>
+    <button onclick="add('.')">.</button>
+    <button onclick="calc()">=</button>
+    <button onclick="add('/')">/</button><br>
+    <button onclick="clr()">C</button>
+  </div>
+
+  <script>
+    const display = document.getElementById("display");
+    const add = val => display.value += val;
+    const calc = () => display.value = eval(display.value);
+    const clr = () => display.value = '';
+  </script>
+</body>
+</html>
